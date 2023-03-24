@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, c, d, e, f;
+
+    // 提示用户输入6个整数，并使用 scanf 函数读取输入
+    printf("请输入6个整数，用空格隔开：");
+    scanf("%d %d %d %d %d %d", &a, &b, &c, &d, &e, &f);
+
+    // 按照表达式 t = c++ - d + --e / -f 计算变量 t 的值
+    // 注意除法运算使用了负号，因此结果是向下取整的
+    int t = c++ - d + --e / -f;
+
+    // 按照表达式 a = b += t 计算变量 a 和 b 的值
+    // 注意这里使用了复合赋值运算符 +=，等价于 b = b + t
+    a = b += t;
+
+    // 输出变量 a、b、c、d、e、f 的值
+    printf("a = %d, b = %d, c = %d, d = %d, e = %d, f = %d\n", a, b, c, d, e, f);
+
+    return 0;
+}
