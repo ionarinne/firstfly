@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main() {
+    int type;
+    // 询问用户输入一个数字
+    printf("input number:");
+    // 从标准输入流中读取用户输入的数字并存储在type变量中
+    scanf_s("%d", &type);
+    // 根据用户输入的数字选择对应的分支
+    switch (type)
+    {
+    case 1:
+        // 如果type等于1，输出"hello"
+        printf("hello");
+        // 跳出switch语句
+        break;
+    case 2:
+        // 如果type等于2，输出"good morning"
+        printf("good morning");
+        // 跳出switch语句
+        break;
+    case 3:
+        // 如果type等于3，输出"good evening"
+        printf("good evening");
+        // 跳出switch语句
+        break;
+    case 4:
+        // 如果type等于4，输出"goodbye"
+        printf("goodbye");
+        // 跳出switch语句
+        break;
+    default:
+        // 如果type既不等于1，2，3，也不等于4，输出"aha, what?"
+        printf("aha,what?");
+        // 跳出switch语句
+        break;
+    }
+    // 程序正常结束并返回0
+    return 0;
+}
