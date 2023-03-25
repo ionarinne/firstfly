@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+int main() {
+	int a = 5; // 初始化a为5
+	int b = 6; // 初始化b为6
+	int t;     // 定义临时变量t
+	t = a;     // 将a的值赋给t
+	// 在t=a处设置断点
+	a = b;     // 将b的值赋给a
+	b = t;     // 将t的值赋给b
+	printf("a=%d,b=%d\n", a, b); // 输出a和b的值
+	return 0;
+}
