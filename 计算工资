@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main() {
+    const double RATE = 8.25; // 声明常量，表示每小时的工资
+    const int STANDARD = 40; // 声明常量，表示标准工作时间
+    double pay = 0.0; // 声明变量，用于存储工资
+    int hours; // 声明变量，用于存储工作小时数
+    printf("请输入工作的小时数");
+    scanf_s("%d", &hours); // 从用户读取工作小时数
+    printf("\n");
+    if (hours > STANDARD) // 如果工作时间超过标准工作时间
+        pay = STANDARD * RATE + (hours - STANDARD) * (RATE * 1.5); // 按照标准工作时间和加班时间分别计算工资
+    else
+        pay = hours * RATE; // 否则按照实际工作时间计算工资
+    printf("payment:%f\n", pay); // 输出工资
+    return 0; // 返回程序执行成功的信号
+}
