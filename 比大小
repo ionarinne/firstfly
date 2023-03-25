@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main() {
+    int a, b; // 声明两个整数变量
+    printf("输入两个整数:"); 
+    scanf_s("%d %d", &a, &b); // 从用户读取两个整数
+
+    int max = 0; // 声明变量用于存储最大值
+    if (a > b) { // 如果 a 大于 b，则将 a 赋值给 max
+        max = a;
+    }
+    else { // 否则将 b 赋值给 max
+        max = b;
+    }
+
+    return 0; // 返回程序执行成功的信号
+}
