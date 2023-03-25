@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main() {
+    int hour1, minute1;
+    int hour2, minute2;
+
+    // 读取第一个时间
+    scanf_s("%d %d", &hour1, &minute1);
+
+    // 读取第二个时间
+    scanf_s("%d %d", &hour2, &minute2);
+
+    // 计算时间差
+    int t1 = hour2 - hour1; // 计算小时差
+    int t2 = minute2 - minute1; // 计算分钟差
+
+    // 处理分钟差小于0的情况
+    if (t2 < 0) {
+        t2 = 60 + t2; // 修正分钟差
+        t1--; // 减去一个小时
+    }
+
+    // 输出结果
+    printf("时间差是%d小时%d分。\n",t1,t2);
+
+    return 0;
+}
