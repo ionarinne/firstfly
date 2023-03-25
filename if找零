@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main() {
+    double price = 0; // 声明变量用于存储商品价格
+    double bill = 0; // 声明变量用于存储支付金额
+
+    // 从用户读取商品价格和支付金额
+    printf("请输入金额：");
+    scanf_s("%f %f", &price, &bill);
+
+    // 计算找零
+    double change = bill - price;
+
+    // 判断支付金额是否足够
+    if (bill >= price) {
+        printf("应该找您：%g\n", change);
+    }
+    else {
+        printf("付款不够");
+    }
+
+    return 0;
+}
