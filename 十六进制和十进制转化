@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int main() {
+    // 声明变量用于存储输入值
+    int a;
+
+    // 从用户读取输入值
+    scanf("%d", &a);
+
+    // 将输入值转换为十进制数
+    int b = (a / 16) * 10 + a % 16;
+
+    // 输出结果
+    printf("%d", b);
+
+    return 0;
+}
