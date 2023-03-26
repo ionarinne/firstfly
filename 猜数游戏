@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h> // 包含rand()和srand()函数的头文件
+#include <time.h> // 包含time()函数的头文件
+
+int main() {
+    srand(time(0)); // 用当前时间作为随机数生成器的种子
+    int number = rand() % 100 + 1; // 生成1到100之间的随机数
+    int count = 0; // 记录猜测次数
+    int a = 0; // 存储用户输入的数
+    printf("我已经想好了一个1到100之间的数。\n");
+    do {
+        printf("猜猜看：");
+        scanf("%d", &a); // 读取用户输入的数
+        count++; // 猜测次数加1
+
+        if (a > number) { // 判断用户输入的数是否比随机数大
+            printf("太大了。\n");
+        }
+        else if (a < number) { // 判断用户输入的数是否比随机数小
+            printf("太小了。\n");
+        }
+    } while (a != number); // 如果用户猜中了，退出循环
+    printf("猜了 %d 次。\n", count); // 输出猜测次数
+
+    return 0;
+}
