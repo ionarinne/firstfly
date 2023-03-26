@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+int main() {
+    int number;
+    int sum = 0; // 用于存储输入数字的累加和
+    int count = 0; // 用于存储输入数字的个数
+    scanf_s("%d", &number); // 读取第一个数字
+    while (number != -1) { // 只要输入的数字不是-1，就进行循环
+        sum += number; // 将输入的数字累加到sum变量中
+        count++; // 记录输入的数字个数
+        scanf_s("%d", &number); // 读取下一个数字
+    }
+    printf("%f\n", sum * 1.0 / count); // 输出平均值
+    return 0; // 返回程序结束状态码
+}
