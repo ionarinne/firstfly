@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+int main() {
+    int x;
+    int ret = 0; // 初始化ret为0，用于存储反转后的数字
+    scanf_s("%d", &x); // 从标准输入读取一个整数，并存储在变量x中
+    int digit;
+    while (x > 0) { // 当x大于0时，执行循环
+        digit = x % 10; // 通过取模运算得到x的最后一位数字
+        ret = ret * 10 + digit; // 将digit添加到ret的末尾
+        x /= 10; // 将x除以10，使得x的最后一位数字被去除
+    }
+    printf("%d", ret); // 将反转后的数字输出到标准输出
+}
