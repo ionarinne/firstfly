@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+int main() {
+    int x; // 存储要计算log2的数值
+    int ret = 0; // 存储计算出的log2值
+    x = 64; // 初始化x为64
+    int t = x; // 记录初始值，方便输出
+    while (x > 1) { // 只要x大于1，就继续循环
+        x /= 2; // 每次将x除以2
+        ret++; // 每次将ret加1
+    }
+    printf("log2 of %d is %d", t, ret); // 输出结果
+    return 0; // 返回程序结束状态码
+}
