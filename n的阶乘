@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+int main() {
+    int n; // 声明变量n表示要求阶乘的数
+    scanf_s("%d", &n); // 从用户输入中获取n的值
+    int fact = 1; // 初始化阶乘结果fact为1
+    int i = 1; // 初始化循环变量i为1
+    for (i = 1; i <= n; i++) { // 循环计算n的阶乘
+        fact *= i; // 将当前循环变量i乘以之前的阶乘结果
+    }
+    printf("%d! = %d\n", n, fact); // 输出计算结果
+    return 0; // 返回0，表示程序正常结束
+}
