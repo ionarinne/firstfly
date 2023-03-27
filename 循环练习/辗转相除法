@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    int t = 0;
+    scanf_s("%d" "%d", &a, &b);  // 读取输入的两个整数
+    while (b != 0) {
+        t = a % b;  // 取模操作
+        a = b;      // 将 b 赋值给 a
+        b = t;      // 将 t 赋值给 b
+    }
+    printf("gcd=%d\n", a);  // 输出最大公约数
+    return 0;
+}
