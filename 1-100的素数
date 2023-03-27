@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main() {
+	int x;
+
+	for (x = 1; x <= 100; x++) { //从1循环到100
+		int isPrime = 1; //假设当前数是素数
+		int i;
+		for (i = 2; i < x; i++) { //从2到x-1循环判断是否存在x的因子
+			if (x % i == 0) { //如果x能够整除i，即i是x的因子
+				isPrime = 0; //标记当前数不是素数
+				break; //跳出当前循环
+			}
+		}
+		if (isPrime == 1) { //如果当前数是素数
+			printf("%d", x); //输出当前素数
+		}
+	}
+	return 0;
+}
