@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main() {
+    int sum = 0; // 初始化变量sum为0
+    int i; // 定义循环计数器i
+    for (i = 1; i <= 100; i++) { // 循环计算1~100的和
+        sum += i; // 累加器累加每次循环的i
+    }
+    printf("sum=%d", sum); // 输出计算结果
+    return 0;
+}
