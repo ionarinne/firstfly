@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main() {
+	int x;
+	int one, two, five;
+	int exit=0;
+	x = 2; //设定需要得到的钱数为2元
+	for (one = 1; one < x * 10; one++) { //循环遍历1角的数量，最多循环到20次（即10元）
+		for (two = 1; two < x * 10 / 2; two++) { //循环遍历2角的数量，最多循环到10次（即10元）
+			for (five = 1; five < x * 10 / 5; five++) { //循环遍历5角的数量，最多循环到4次（即20元）
+				if (one + two * 2 + five * 5 == x * 10) { //判断是否恰好可以组成2元
+					printf("可以用%d个1角加%d个2角加%d5角得到%d元\n", one, two, five, x); //输出可行的组合方案
+					exit = 1; //设定标记位，用于跳出多重循环
+					break; //跳出当前循环
+					//goto out; //使用标记语句跳出多重循环
+				}
+			}
+			if (exit == 1)break; //跳出循环
+		}if (exit == 1)break; //跳出循环
+	}
+	//out; //标记语句所指定的位置
+	return 0;
+}
