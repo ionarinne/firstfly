@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int a;
+    scanf_s("%d", &a);
+    int i, j, k;
+    i = a;
+    int cnt = 0;
+    while (i <= a + 3) { // 第一重循环，枚举百位数
+        j = a;
+        while (j <= a + 3) { // 第二重循环，枚举十位数
+            k = a;
+            while (k <= a + 3) { // 第三重循环，枚举个位数
+                if (i != j && i != k && j != k) { // 三个数互不相同
+                    printf("%d%d%d", i, j, k);
+                    cnt++;
+                    if (cnt == 6) { // 每输出6个数后换行
+                        printf("\n");
+                        cnt = 0;
+                    } else {
+                        printf(" ");
+                    }
+                }
+                k++;
+            }
+            j++;
+        }
+        i++;
+    }
+    return 0;
+}
