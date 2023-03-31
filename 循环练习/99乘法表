@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+int n;
+scanf_s("%d", &n); // 从标准输入读取一个整数
+int i, j;
+i = 1;
+while (i <= n) {  // 循环 n 次
+    j = 1;
+    i++;  // i 从 2 开始，因为第一行只有一个数字
+    while (j <= i) {  // 循环 i 次
+        printf("%d*%d=%d", j, i, i * j);  // 输出乘法表中的一项
+        j++;
+    }
+}
+
+return 0;
+}
