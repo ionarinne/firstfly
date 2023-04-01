@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int FindMax(int score[], long num[], int n, long *pMaxNum) {
+    int maxScore = score[0];
+    *pMaxNum = num[0];
+
+    for (int i = 1; i < n; i++) {
+        if (score[i] > maxScore) {
+            maxScore = score[i];
+            *pMaxNum = num[i];
+        }
+    }
+
+    return maxScore;
+}
+
+int main() {
+    int n;
+    printf("请输入班级人数（不超过40人）：");
+    scanf("%d", &n);
+
+    int score[40];
+    long num[40];
+
+    printf("请输入学生的学号和成绩：\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%ld %d", &num[i], &score[i]);
+    }
+
+    long maxNum;
+    int maxScore = FindMax(score, num, n, &maxNum);
+
+    printf("最高分：%d，学号：%ld\n", maxScore, maxNum);
+
+    return 0;
+}
