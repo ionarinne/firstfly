@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+// 判断一个数是否为素数
+int is_prime(int n) {
+    if (n < 2) {  // 如果小于 2，则不是素数
+        return 0;
+    }
+    for (int i = 2; i * i <= n; i++) {  // 从 2 到 sqrt(n) 遍历可能的因子
+        if (n % i == 0) {  // 如果存在能整除 n 的因子，则不是素数
+            return 0;
+        }
+    }
+    return 1;  // 否则是素数
+}
+
+int main() {
+    int n1, n2;
+    int sum = 0;  // 保存素数之和
+    printf("请输入两个数，用空格隔开：");
+    scanf("%d %d", &n1, &n2);  // 读入两个整数
+    for (int i = n1; i <= n2; i++) {  // 遍历 n1 到 n2 之间的所有整数
+        if (is_prime(i)) {  // 如果当前整数是素数
+            sum += i;  // 将其加到素数之和中
+        }
+    }
+    printf("%d到%d之间的素数之和为：%d\n", n1, n2, sum);  // 输出素数之和
+    return 0;
+}
