@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+int number, n; //定义两个整数变量，分别表示答案和最大猜测次数
+int inp; //定义整数变量，表示玩家每次猜的数字
+int finished = 0; //定义整数变量，表示游戏是否结束，初始化为未结束
+int cnt = 0; //定义整数变量，表示玩家已经猜了多少次
+scanf_s("%d %d", &number, &n); //从标准输入中读取答案和最大猜测次数
+do { //do-while循环开始，先执行一次循环体再判断条件
+    scanf_s("%d", &inp); //从标准输入中读取玩家每次猜的数字
+    cnt++; //计数器加1，表示玩家已经猜了一次
+
+    if (inp < 0) { //如果玩家猜的数字为负数
+        printf("game over\n"); //输出“游戏结束”
+        finished = 1; //将游戏结束标志设置为1
+    }
+    else if(inp > number) { //如果玩家猜的数字比答案大
+        printf("too big\n"); //输出“太大了”
+    }
+    else if (inp < number) { //如果玩家猜的数字比答案小
+        printf("too small\n"); //输出“太小了”
+    }
+    else { //如果玩家猜中了答案
+        if (cnt == 1) { //如果这是玩家第一次猜
+            printf("binggo\n"); //输出“binggo”
+        }
+        else if (cnt <= 3) { //如果玩家前三次猜中了答案
+            printf("lucky you\n"); //输出“你真幸运”
+        }
+        else { //如果玩家第4次或以上猜中了答案
+            printf("good guess\n"); //输出“猜对了，真棒！”
+            finished = 1; //将游戏结束标志设置为1
+        }
+        if (cnt == n) { //如果玩家已经猜了n次
+            if (!finished) { //如果游戏还没有结束
+                printf("game over\n"); //输出“游戏结束”
+                finished = 1; //将游戏结束标志设置为1
+            }
+        }
+    }
+} while (!finished); //当游戏还没有结束时继续循环
+
+return 0; //程序结束，返回0
+}
