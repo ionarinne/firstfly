@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    scanf_s("%d/%d", &a, &b);  // 读入分数 a/b，假定 a 和 b 都为正整数
+    int t;  // 用来交换 c 和 d 的值的中间变量
+    int c = a;  // 保存较大的数，初始值为 a
+    int d = b;  // 保存较小的数，初始值为 b
+    while (d > 0) {  // 辗转相除法求最大公约数
+        t = c % d;
+        c = d;
+        d = t;
+    }
+    printf("%d/%d\n", a / c, b / c);  // 输出约分后的结果
+    return 0;
+}
