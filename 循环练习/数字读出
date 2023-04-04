@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int x;
+    scanf_s("%d", &x);  // 读入一个整数
+    if (x < 0) {  // 如果是负数
+        printf("fu ");  // 输出 "fu "，并将 x 变为正数
+        x = -x;
+    }
+
+    int mask = 1;  // 初始掩码为 1
+    int t = x;
+    while (t > 9) {  // 计算 x 的位数，并计算掩码 mask
+        t /= 10;
+        mask *= 10;
+    }
+
+    do {  // 从高位到低位遍历 x 的各个数字
+        int d = x / mask;  // 取当前位数字
+        switch (d) {  // 根据数字输出对应的汉字
+        case 0: printf("ling"); break;
+        case 1: printf("yi"); break;
+        case 2: printf("er"); break;
+        case 3: printf("san"); break;
+        case 4: printf("si"); break;
+        case 5: printf("wu"); break;
+        case 6: printf("liu"); break;
+        case 7: printf("qi"); break;
+        case 8: printf("ba"); break;
+        case 9: printf("jiu"); break;
+        }
+        if (mask > 9) {  // 如果不是最后一位数字
+            printf(" ");  // 输出空格
+        }
+        x %= mask;  // 取下一位数字
+        mask /= 10;  // 更新掩码
+    } while (mask > 0);
+
+    return 0;
+}
