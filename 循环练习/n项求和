@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+int n;
+scanf_s("%d", &n); //从标准输入中读取一个整数n
+double dividend, divisor; //定义两个双精度浮点数变量，分别表示分子和分母
+double sum = 0.0; //定义双精度浮点数变量sum，用于存储分数序列的和，初始化为0
+dividend = 2; //初始化分子为2
+divisor = 1; //初始化分母为1
+int i, t; //定义两个整数变量i和t，用于循环计数和交换分子分母的值
+
+for (i = 1; i <= n; i++) { //for循环开始，循环n次
+    sum += dividend /divisor; //将当前分数加到sum中
+    t = dividend; //将分子的值保存到临时变量t中
+    dividend = dividend + divisor; //将分子更新为下一个分数的分子
+    divisor = t; //将分母更新为上一个分数的分子
+}
+
+printf("%.2f\n", sum); //将sum的值输出到标准输出，保留两位小数
+return 0; //程序结束，返回0
+}
